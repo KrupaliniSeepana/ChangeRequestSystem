@@ -1,0 +1,20 @@
+﻿@model ChangeRequestSystem.Models.ChangeRequest
+
+<h2>Create New Change Request</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.Title)
+    @Html.TextBoxFor(m => m.Title)
+
+    @Html.LabelFor(m => m.Description)
+    @Html.TextAreaFor(m => m.Description)
+
+    @Html.LabelFor(m => m.Priority)
+    @Html.DropDownListFor(m => m.Priority, new SelectList(new[] { "Low", "Medium", "High" }))
+
+    @Html.LabelFor(m => m.DueDate)
+    @Html.TextBoxFor(m => m.DueDate, "{0:yyyy-MM-dd}", new { type = "date" })
+
+    <button type="submit">Submit Request</button>
+}

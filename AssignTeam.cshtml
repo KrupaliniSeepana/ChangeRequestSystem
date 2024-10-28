@@ -1,0 +1,14 @@
+﻿
+@model ChangeRequestSystem.Models.ChangeRequest
+
+
+<h2>Assign Development Team</h2>
+
+@using (Html.BeginForm("AssignTeam", "ChangeRequest"))
+{
+    @Html.HiddenFor(m => m.RequestID)
+    <label>Select Team</label>
+    @Html.DropDownList("AssignedTeamID", ViewBag.Teams as SelectList)
+
+    <button type="submit">Assign Team</button>
+}

@@ -1,0 +1,10 @@
+﻿public class Team
+{
+    public int TeamID { get; set; }
+    public string TeamName { get; set; }
+    public virtual ICollection<User>
+    Members { get; set; } // Optional: Team Members
+
+    public virtual ICollection<ChangeRequest>
+        ChangeRequests { get; set; }
+        }
